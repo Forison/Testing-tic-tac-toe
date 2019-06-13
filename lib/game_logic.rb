@@ -1,6 +1,8 @@
 require 'set'
 
 class GameLogic
+    attr_accessor :player_one , :player_two
+    
     @@WINS=[[1,2,3],[1,4,7],[1,5,9],[2,5,8],[3,6,9],[3,5,7],[4,5,6],[7,8,9]]
     @@options=[]
 
@@ -20,8 +22,7 @@ class GameLogic
     end
 
     def board_full?
-      return false if @board.post.any?{|x| x.is_a?(Integer)} 
-
+      return false if @board.post.any?{ |x| x.is_a?(Integer)} 
       true
     end
 
