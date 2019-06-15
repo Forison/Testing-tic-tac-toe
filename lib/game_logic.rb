@@ -43,8 +43,6 @@ class GameLogic
           option = 0
           current_player = a.even? ? @player_one : @player_two
           
-          
-          
           loop do
             puts "#{current_player}, select an option form 1...9"
             option = gets.chomp.to_i

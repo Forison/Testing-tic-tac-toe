@@ -1,6 +1,6 @@
-# **Classic Tic-Tac-Toe Game.**
+# * *Testing Classic Tic-Tac-Toe Game.**
 
-This a recreation of the classic Tic-Tac-Toe using Ruby. The project is meant to reinforce Object Oriented Programing (OOP) concepts. You can learn more about the game <a href="https://en.wikipedia.org/wiki/Tic-tac-toe" target="blank">**HERE.**</a>
+This a rspec test suite of the classic Tic-Tac-Toe using Ruby. The project is meant to reinforce TDD concepts using the rspec Ruby framework.
 
 ## **How to play our game**
 

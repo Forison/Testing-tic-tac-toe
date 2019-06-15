@@ -65,5 +65,6 @@ RSpec.describe GameLogic do
       expect( game.board_full? == true).to eql(board.post.any?{ |x| x.is_a?(String) })
     end
   end
+  
 
 end
