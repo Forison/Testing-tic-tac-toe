@@ -4,6 +4,7 @@ require './lib/board'
 RSpec.describe GameLogic do
     let(:board) { Board.new } 
     let(:game) { GameLogic.new('playerOne', 'playerTwo', board) }
+    let(:input) { [1,2,3,4,5,6,7,8,9] }
 
     it "test initialize player one" do
        expect( game.player_one ).to eql('playerOne')
@@ -15,31 +16,30 @@ RSpec.describe GameLogic do
 
   describe "#valid_move?" do
   
-    it "check if input is an not integer " do
-      input = !input.to_i
-      expect( game.valid_move?(input) ).to eql(false)
-    end
-
-    it "check if input is an integer " do
-      input = input.to_i
-      expect( game.valid_move?(input) ).to eql(true)
-    end
-
     it "check if input is an integer from 1 -9" do
-      input = [1,2,3,4,5,6,7,8,9]
-      input.each do |a|  
-      expect( game.valid_move?( a ) ).to eql(true)
-      end
-      
+      case input
+        when input[0]
+        expect( game.valid_move?(input[0]) ).to eql(true)
+        when input[1]
+        expect( game.valid_move?(input[1]) ).to eql(true)
+        when input[2]
+        expect( game.valid_move?(input[2]) ).to eql(true)
+        when input[3]
+        expect( game.valid_move?(input[3]) ).to eql(true)
+        when input[4]
+        expect( game.valid_move?(input[4]) ).to eql(true)
+        when input[5]
+        expect( game.valid_move?(input[5]) ).to eql(true)
+        when input[6]
+        expect( game.valid_move?(input[6]) ).to eql(true)
+        when input[7]
+        expect( game.valid_move?(input[7]) ).to eql(true)
+        when input[8]
+        expect( game.valid_move?(input[8]) ).to eql(true)
+        else
+          'invalid input'
+        end
     end
-
-    it "check if input is an not an integer from 1 -9" do
-      input = [1,2,3,4,5,6,7,8,9]
-      input.each do |a|  
-      expect( game.valid_move?( !a ) ).to eql( false )
-      end
-    end
-
   end
 
   describe "#board_full?" do
