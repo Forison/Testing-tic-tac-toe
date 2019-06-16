@@ -3,6 +3,8 @@ require './lib/board'
 
 RSpec.describe GameLogic do
     let(:board) { Board.new } 
+    let(:player_one) { 1 }
+    let(:player_two) { 2 }
     let(:game) { GameLogic.new('playerOne', 'playerTwo', board) }
     let(:input) { [1,2,3,4,5,6,7,8,9] }
 
@@ -13,6 +15,13 @@ RSpec.describe GameLogic do
     it "test initialize player two" do
        expect( game.player_two ).to eql('playerTwo')
     end
+  
+  describe '::run' do
+    it 'instantiates the class with 3 arguments' do
+      expect(GameLogic).to receive(:new).with(player_one, player_two, board)
+      GameLogic.run(player_one, player_two, board)
+    end
+  end
 
   describe "#valid_move?" do
   
