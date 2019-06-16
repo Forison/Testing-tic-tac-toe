@@ -52,5 +52,4 @@ RSpec.describe GameLogic do
     end
   end
   
-
 end
