@@ -3,7 +3,7 @@ require './lib/board'
 
 RSpec.describe GameLogic do
     let(:board) { Board.new } 
-    let(:game) { GameLogic.new('playerOne', 'playerTwo, board') }
+    let(:game) { GameLogic.new('playerOne', 'playerTwo', board) }
 
     it "test initialize player one" do
        expect( game.player_one ).to eql('playerOne')
