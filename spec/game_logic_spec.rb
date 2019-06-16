@@ -8,6 +8,11 @@ RSpec.describe GameLogic do
     let(:game) { GameLogic.new('playerOne', 'playerTwo', board) }
     let(:input) { [1,2,3,4,5,6,7,8,9] }
 
+    it "instantiates the class with 3 arguments" do
+      expect(GameLogic).to receive(:new).with(player_one, player_two, board)
+      GameLogic.new(player_one, player_two, board)
+    end
+
     it "test initialize player one" do
        expect( game.player_one ).to eql('playerOne')
     end
@@ -16,12 +21,7 @@ RSpec.describe GameLogic do
        expect( game.player_two ).to eql('playerTwo')
     end
   
-  describe '::run' do
-    it 'instantiates the class with 3 arguments' do
-      expect(GameLogic).to receive(:new).with(player_one, player_two, board)
-      GameLogic.run(player_one, player_two, board)
-    end
-  end
+    
 
   describe "#valid_move?" do
   
